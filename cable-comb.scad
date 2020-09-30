@@ -1,25 +1,23 @@
 $fn = 40;
 
-wireDiams = [15,10,5,5,5,5,10,15]; //wire 
+wireDiams = [6.9,5.7,3.5]; //wire 
 
-gapFact = 0.6; //gap factor
+gapFact = 0.5; //gap factor
 
 wallThkFact = 0.1; //wall thickness factor
 wallThkMin = 2; //min wall thickness
-h1 =3;
+h1 =2;
 h2 =2;
-h3 =5; 
+h3 =3; 
 
-baseHeight = 6; //height of the base
-
-hasScrewHoles = true;
-screwHoleDiam =2;
+baseHeight = 4; //height of the base
+thickness=10; //thickness
 
 //Calcuated constants
 maxDiam = max(wireDiams);
 clipHeight = maxDiam+h1+h2+h3;
 
-thickness=20; //thickness
+
 
 function clearance(d) = clipHeight*sin(asin(((d-(d*gapFact))/2)/(h3+maxDiam)));
 clearances = [for (d =wireDiams)clearance(d)];
